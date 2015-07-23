@@ -1,7 +1,7 @@
 /**
  * FILE: uninitialized_heap.cc
  * AUTHOR: Austin Maliszewski
- * DATE: 11 July 2015
+ * DATE: 23 July 2015
  * 
  * This file demonstrates a common bug -- use of an uninitalized
  * value. The myClass::aBool_ member is only initalized if anInt > 100. 
@@ -41,7 +41,7 @@ class myClass {
   bool aBool_;
 
 public:
-  myClass(int anInt, double aDouble) : anInt_(anInt), aDouble_(aDouble) {
+  myClass(int anInt, double aDouble) : aDouble_(aDouble), anInt_(anInt) {
     if (anInt > 100) {
       aBool_ = true;
     } 
@@ -66,5 +66,7 @@ int main(int argc, char **argv) {
   myClass * myClassPtr = new myClass(10, 3.14);
   print_mem(myClassPtr, sizeof(myClass));
   myClassPtr->saySomething();
+
+  return 0;
 }
 
