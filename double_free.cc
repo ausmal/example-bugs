@@ -1,5 +1,5 @@
 /**
- * FILE: uninitialized_heap.cc
+ * FILE: double_free.cc
  * AUTHOR: Austin Maliszewski
  * DATE: 23 July 2015
  * 
